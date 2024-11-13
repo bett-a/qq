@@ -1,3 +1,4 @@
+import random
 def insertion_sort(a):
     for i in range(1, len(a)):
         tmp = a[i]
@@ -25,3 +26,20 @@ def selection_sort(a):
         a[i], a[index_min] = a[index_min], a[i]
     return a
 
+
+def quick_sort(a):
+    if len(a) <= 1:
+        return a
+    else:
+        q = random.choice(a)
+        previos = []
+        middle = []
+        next = []
+        for n in a:
+            if n < q:
+                previos.append(n)
+            elif n > q:
+                next.append(n)
+            else:
+                middle.append(n)
+        return quick_sort(previos) + middle + quick_sort(next)
