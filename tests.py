@@ -27,7 +27,7 @@ def continuance():
 
 def T(lst):
     start = time.time()
-    sorts.selection_sort(lst)
+    sorts.quick_sort(lst)
     finish = time.time()
     result = (finish - start) * 1000
 
